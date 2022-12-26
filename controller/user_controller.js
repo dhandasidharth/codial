@@ -1,16 +1,34 @@
 const User = require("../models/user");
 
 module.exports.profile = function(req,res){
-    res.end('<h1>user profile </h1>');
+    res.render('user_profile');
+    return;
 }
 module.exports.sign_up = function(req,res){
+    if (req.isAuthenticated()){
+        res.redirect('/users/profile');
+        return;
+    }
     res.render('signUp');
     return;
 }
 module.exports.sign_in = function(req,res){
+    if (req.isAuthenticated()){
+        res.redirect('/users/profile');
+        return;
+    }
     res.render('signIn');
     return;
 }
+
+module.exports.destroy = function(req,res){
+    req.logout(function(err){
+        if (err){console.log('error in logging out')};
+        res.redirect('/');
+        return;
+    })
+}
+
 module.exports.create = function(req,res){
     console.log("run");
     if (req.body.password != req.body.confirm_password){

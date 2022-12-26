@@ -6,6 +6,7 @@ router.get('/profile',passport.checkAuthentication,user_cont.profile);
 router.get('/sign_in',user_cont.sign_in);
 router.get('/sign_up',user_cont.sign_up);
 router.post('/users/create',user_cont.create);
+router.get('/sign_out',user_cont.destroy);
 router.post('/create-session',
     passport.authenticate(
         'local',

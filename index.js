@@ -23,12 +23,12 @@ app.use(session({
     resave : false,
     cookie : {
         maxAge : (1000*60*100)
-    }
+    },
 }))
 app.use(passport.initialize());
 app.use(passport.session());
-app.use('/',require('./routes/index'));
 app.use(passport.setAuthenticatedUser);
+app.use('/',require('./routes/index'));
 
 
 

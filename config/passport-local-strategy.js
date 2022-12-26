@@ -34,6 +34,7 @@ passport.deserializeUser(function(id,done){
 
 passport.checkAuthentication = function(req,res,next){
     if (req.isAuthenticated()){
+        console.log('charso bis');
         return next();
     }
     res.redirect('/users/sign_in');
@@ -41,6 +42,7 @@ passport.checkAuthentication = function(req,res,next){
 
 passport.setAuthenticatedUser = function(req,res,next){
     if (req.isAuthenticated()){
+        console.log('charso bis');
         res.locals.user = req.user;
     }
     next();
