@@ -1,6 +1,9 @@
-<header>
-    <h1> this is head </h1>
+ <header>
+    <div>
+        CODIAL
+    </div>
     <% if (locals.user) { %>
+        <div>
         <ul> 
         <li>
             <%= user.name %>
@@ -9,7 +12,9 @@
             <a href = "/users/sign_out">Sign Out</a>
         </l1>
         </ul>
+        </div>
     <% } else{ %>
+        <div>
         <ul>
         <l1>
             <a href = '/users/sign_in'> Sign In</a>
@@ -18,5 +23,6 @@
             <a href = '/users/sign_up'>Sign Up</a>
         </l1>
         </ul>
+        </div>
     <% } %>
 </header>

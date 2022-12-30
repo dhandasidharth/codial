@@ -1,0 +1,10 @@
+footer {
+  height: 10vh;
+  width: 97vw;
+  background-color: lightblue;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: row; }
+  footer #inside-flex {
+    display: flex;
+    flex-direction: column; }

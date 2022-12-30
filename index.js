@@ -7,6 +7,19 @@ const expressLayouts = require('express-ejs-layouts');
 const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
+const sass = require('node-sass-middleware');
+
+app.use(
+    sass({
+        src : './assets/scss',
+        dest : './assets/css',
+        debug : true,
+        outputStyle : 'extended',
+        prefix : '/css'
+    })
+);
+
+
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(cookieParser());
 app.use(expressLayouts);

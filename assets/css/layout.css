@@ -1,5 +1,7 @@
-body{
-    margin : 0px;
-    text-align: center;
-    color:red;
-}
+body {
+  margin: 0px;
+  text-align: center;
+  color: red; }
+  body #layout-main {
+    height: 100vh;
+    border: 2px solid black; }
