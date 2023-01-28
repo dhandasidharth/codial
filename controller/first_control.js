@@ -1,7 +1,9 @@
+const Post = require('../models/posts');
 module.exports.home = function(req,res){
-    console.log(req.cookies);
-    res.cookie('munda',29);
-    res.render('home',{
-        title : "big bro"
-    })
-}
+    Post.find({}).populate('user').exec(function(err,posts){
+        return res.render('home',{
+            title : 'Codial',
+            posts : posts
+        });
+    });
+};
